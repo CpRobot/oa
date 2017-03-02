@@ -19,7 +19,7 @@ return [
     // 应用调试模式
     'app_debug'              => true,
     // 应用Trace
-    'app_trace'              => false,
+    'app_trace'              => true,
     // 应用模式状态
     'app_status'             => '',
     // 是否支持多模块
@@ -127,7 +127,8 @@ return [
         // 模板后缀
         'view_suffix'  => 'html',
         // 模板文件名分隔符
-        'view_depr'    => DS,
+        //'view_depr'    => DS,
+        'view_depr'    => '_',
         // 模板引擎普通标签开始标记
         'tpl_begin'    => '{',
         // 模板引擎普通标签结束标记
@@ -235,5 +236,23 @@ return [
         'type'      => 'bootstrap',
         'var_page'  => 'page',
         'list_rows' => 15,
+    ],
+
+    // 验证码配置
+    'captcha'  => [
+        // 验证码字符集合
+        'codeSet'  => '2345678abcdefhijkmnpqrstuvwxyzABCDEFGHJKLMNPQRTUVWXY', 
+        // 验证码字体大小(px)
+        'fontSize' => 25, 
+        // 是否画混淆曲线
+        'useCurve' => true, 
+         // 验证码图片高度
+        'imageH'   => 30,
+        // 验证码图片宽度
+        'imageW'   => 100, 
+        // 验证码位数
+        'length'   => 5, 
+        // 验证成功后是否重置        
+        'reset'    => true
     ],
 ];
