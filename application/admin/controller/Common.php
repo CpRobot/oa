@@ -31,7 +31,7 @@ class Common extends Controller
     protected function checkLogin() {
 
     	// 验证是否登录成功
-    	if (!Session::has('userinfo') || $uname = Session::get('userinfo.user_name')) {
+    	if (!Session::has('userinfo') || !$uname = Session::get('userinfo.user_name')) {
     		$this->redirect('login/index');
     	}
     	// 登录是否过期，无操作1h即过期

@@ -1,10 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8" />
-	<title>登录</title>
-</head>
-<body>
-	
+{include file="public/header" /}
+
+<body >
+	<!-- 登录页面 -->
+	<div class ="content" style="width: 100%;" >
+		<div class="bg-top"></div>
+		<div class="login bg-middle" style="">
+			<div class="container">
+				<div class="left">
+					<img src="__PUBLIC__/images/oa_logo.png" class="logo" alt="" />
+					<img src="__PUBLIC__/images/oa_login_left.png" class="left-img" alt="" />
+				</div>	
+				<div class="login-form">
+					<h3>用户登录</h3>
+					<div class="errmsg"><p class="msg"></p></div>
+					<form action="" method="post">
+						<div class="input-control">
+							<input type="text" name="user_name" class="input" placeholder="帐号" />	
+						</div>
+						<div class="input-control">
+							<input type="password" name="password" class="input" placeholder="密码" />	
+						</div>
+						<div class="input-control">
+							<input type="text" name="captcha" class="input" placeholder="验证码" style="width: 45%;" />
+							{:captcha_img()}
+						</div>
+						<div class="input-control">
+							<label class="checkbox">
+					          	<input type="checkbox"> 记住密码
+					        </label>
+						</div>
+						<div class="form-control">
+							<button type="button" class="btn submit">登录</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="bg-bottom"></div>
+	</div>
+	{include file="public/footer" /}
+	{js href="__PUBLIC__/js/jquery.md5.js"}
+	<script>
+		var _middleHeight = 198;
+
+		$(function() {
+			// 浏览器窗口调整大小时，刷新页面
+			$(window).resize(function() {
+				window.location.reload();
+			});
+			// 设置背景高度
+			var _clientHeight = $(window).height();
+			var _bgHeight = (_clientHeight - 198) / 2;
+			$('.bg-top, .bg-bottom').height(_bgHeight);
+		});
+
+		$('.submit').on('click', function() {
+			var user_name = $('input[name="user_name"]').val();
+			var password = $('input[name="password"]').val();
+			var captcha = $('input[name="captcha"]').val();
+			$.ajax({
+				url: "{:url('login/login')}",
+				method: 'POST',
+				data: {
+					user_name: user_name,
+					password: $.md5(password),
+					captcha: captcha
+				},
+				dataType: 'JSON',
+				success: function(res) {
+					if (!res.status) {
+						$('.errmsg .msg').text(res.msg);
+						setTimeout(function(){
+							$('.errmsg .msg').text('');
+						}, 2000)
+					} else {
+						window.location.href=res.url;	
+					}
+				}
+			})
+		})
+
+	</script>
+
 </body>
 </html>

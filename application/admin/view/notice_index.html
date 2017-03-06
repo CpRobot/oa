@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>公告列表</title>
+</head>
+<body>
+	<div>
+		<ul>
+			{volist name="list" id="info"}
+			<li>{$info.title}</li>
+			{/volist}
+		</ul>
+	</div>
+	{$page}
+</body>
+</html>

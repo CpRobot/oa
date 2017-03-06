@@ -38,7 +38,7 @@ class Login extends Controller {
     	
         // 数据验证
         if (request() -> isPost()) {
-            echo "This is Post request!";  
+            
             $user_name = input ('post.user_name');
             $password  = input ('post.password');
             $captcha   = input ('post.captcha');
@@ -73,7 +73,8 @@ class Login extends Controller {
      */
     public function logout() {
         Session::clear();
-        exit(json_encode(array('status' => 1, 'msg' => '退出成功')));
+        $this->redirect('login/index');
+        // exit(json_encode(array('status' => 1, 'msg' => '退出成功')));
     }
 
 
