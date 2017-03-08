@@ -1,0 +1,36 @@
+/*!
+ * public.css (公用CSS文件).
+ * Author  : zdwl_cp.
+ * Company : .
+ */
+
+@charset "utf-8";
+
+* {
+	margin: 0; 
+	padding: 0;
+}
+body {
+	font: 12px/1.5 Microsoft YaHei, sans-serif;
+	color: #666;
+	background-color: #FFF;
+}
+img {
+	display: block;
+	width: 100%;
+}
+ul {
+	list-style: none;
+}
+input {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+}
+
+.content, .container {
+	position: relative;
+}
+

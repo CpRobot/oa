@@ -1,0 +1,121 @@
+{include file="public/header" /}
+
+<body class="common-bg">
+
+	<div class="common-container">
+		<nav class="navbar">
+			<div class="navbar-header">
+				<img src="__PUBLIC__/images/oa_logo2.png" alt="" />
+				<span>众达网络协同办公系统</span>
+			</div>
+			<div class="navbar-collapse">
+				<ul>
+					<li>您好，<span style="padding-right:15px;">褚鹏</span>欢迎登录</li>
+					<li><a href="" class="chang_pwd">修改密码</a></li>
+					<li><a href="{:url('login/logout')}" class="logout">退出系统</a></li>
+				</ul>
+			</div>
+		</nav>
+		
+		<div class="index-container clearfix">
+			<div class="left-options option">
+				<ul>
+					<li class="oa-sign-in">
+						<a href="javascript:;" data-url="{:url('index/signIn')}">
+							<img src="__PUBLIC__/images/oa_icon_signin.png" alt="" />
+							<span>每日签到</span>
+						</a>
+					</li>
+					<li class="oa-user">
+						<a href="">
+							<span>褚鹏&nbsp;PHP工程师</span>
+							<em>欢迎登录</em>
+							<img src="__PUBLIC__/images/oa_icon_signin.png" alt="" />
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="middle-options-1 option">
+				<ul>
+					<li class="oa-weekly">
+						<a href="">
+							<img src="__PUBLIC__/images/oa_icon_weekly.png" alt="" />
+							<span>周报</span>
+						</a>
+					</li>
+					<li class="oa-go-out">
+						<a href="">
+							<img src="__PUBLIC__/images/oa_icon_goout.png" alt="" />
+							<span>外出申请单</span>
+						</a>
+					</li>
+					<li class="oa-leave">
+						<a href="">
+							<img src="__PUBLIC__/images/oa_icon_leave.png" alt="" />
+							<span>请假单</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="middle-options-2 option">
+				<ul>
+					<li class="oa-workflow">
+						<a href="">
+							<img src="__PUBLIC__/images/oa_icon_workflow.png" alt="" />
+							<span>工作流程</span>
+						</a>
+					</li>
+					<li class="oa-im">
+						<a href="">
+							<img src="__PUBLIC__/images/oa_icon_im.png" alt="" />
+							<span>即时通讯</span>
+						</a>
+					</li>
+					<li class="oa-overtime">
+						<a href="">
+							<img src="__PUBLIC__/images/oa_icon_overtime.png" alt="" />
+							<span>加班申请单</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="right-options option">
+				<ul>
+					<li class="oa-checking-in">
+						<a href="">
+							<img src="__PUBLIC__/images/oa_icon_checking_in.png" alt="" />
+							<span>考勤系统</span>
+						</a>
+					</li>
+					<li class="oa-address-book">
+						<a href="">
+							<img src="__PUBLIC__/images/oa_icon_address_book.png" alt="" />
+							<span>通讯录</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="notice">
+			<h3 class="notice-header">公告</h3>
+		</div>
+	</div>
+	
+	{include file="public/footer" /}
+	<script>
+		$(function() {
+			// // 浏览器窗口大小改变时，刷新页面
+			// $(window).resize(function() {
+			// 	window.location.reload();
+			// });
+
+			// // 设置背景高度
+			// var _clientHeight = $(window).height();
+			// var _bgHeight = _clientHeight - 60;
+			// $('.common-container').height(_bgHeight);
+			// $('.notice').height(_bgHeight*0.3);
+		});
+	</script>	
+</body>
+</html>
+

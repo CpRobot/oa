@@ -77,7 +77,37 @@
 						window.location.href=res.url;	
 					}
 				}
-			})
+			});
+		});
+
+		// 键盘 Enter 提交表单操作
+		$('body').on('keydown', function(e) {
+			if (e.keyCode == 13) {
+				e.preventDefault();
+				var user_name = $('input[name="user_name"]').val();
+				var password = $('input[name="password"]').val();
+				var captcha = $('input[name="captcha"]').val();
+				$.ajax({
+					url: "{:url('login/login')}",
+					method: 'POST',
+					data: {
+						user_name: user_name,
+						password: $.md5(password),
+						captcha: captcha
+					},
+					dataType: 'JSON',
+					success: function(res) {
+						if (!res.status) {
+							$('.errmsg .msg').text(res.msg);
+							setTimeout(function(){
+								$('.errmsg .msg').text('');
+							}, 2000)
+						} else {
+							window.location.href=res.url;	
+						}
+					}
+				});
+			}
 		})
 
 	</script>
